@@ -12,22 +12,20 @@ class RegistrationController extends Controller
     /**
      * Registration form
      */
-    public function registerForm()
+    public function create()
     {
         return view('auth.registration');
     }
     /**
      * Registration formSubmit
      */
-    public function register(RegistrationRequest $request)
+    public function store(RegistrationRequest $request)
     {
-
         $user                   = new User();
         $user->name             = $request->name;
         $user->email            = $request->email;
         $user->password         = Hash::make($request->password);
         $user->save();
-
 
         session()->flash('message', 'Thanks for Registration');
         return redirect()->route('login');

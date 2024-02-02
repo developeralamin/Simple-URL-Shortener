@@ -9,24 +9,26 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     /**
-     * Login form
+     * Summary of loginForm
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function loginForm()
+    public function create()
     {
         return view('auth.login');
     }
 
     /**
-     * Login here
+     * Summary of login
+     * @param \App\Http\Requests\LoginRequest $request
+     * @return \Illuminate\Http\RedirectResponse|mixed
      */
-    public function login(LoginRequest $request)
+    public function store(LoginRequest $request)
     {
         $user = Auth::attempt([
             'email' => $request->email,
             'password' => $request->password
         ]);
         if ($user) {
-            // $user = Auth::user();
             $user = Auth::user();
             return redirect()->route('shortner.create');
         } else {
@@ -35,7 +37,8 @@ class LoginController extends Controller
     }
 
     /**
-     * Login here
+     * Summary of logout
+     * @return \Illuminate\Http\RedirectResponse|mixed
      */
     public function logout()
     {
