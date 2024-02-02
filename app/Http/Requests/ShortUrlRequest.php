@@ -22,7 +22,7 @@ class ShortUrlRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'original_url'     => 'required|url',
+            'original_url'  => 'required|url',
         ];
     }
 }

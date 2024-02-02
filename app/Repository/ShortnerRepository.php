@@ -28,8 +28,6 @@ class ShortnerRepository extends BaseRepository
 
     public function create($data)
     {
-        $data['user_id'] = $this->userId();
-
         return ShortUrl::create($data);
     }
 
@@ -44,6 +42,19 @@ class ShortnerRepository extends BaseRepository
         return ShortUrl::where('short_url', $shortUrl)
             ->where('user_id', $this->userId())
             ->firstOrFail();
+    }
+
+    /**
+     * Summary of findByOriginalUrlAndUserId
+     * @param mixed $originalUrl
+     * @param mixed $userId
+     * @return mixed
+     */
+    public function findByOriginalUrlAndUserId($originalUrl, $userId)
+    {
+        return ShortUrl::where('original_url', $originalUrl)
+            ->where('user_id', $userId)
+            ->first();
     }
 
 }
