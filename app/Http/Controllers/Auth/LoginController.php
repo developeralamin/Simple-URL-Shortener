@@ -28,7 +28,7 @@ class LoginController extends Controller
         if ($user) {
             // $user = Auth::user();
             $user = Auth::user();
-            return redirect()->route('dashboard');
+            return redirect()->route('shortner.create');
         } else {
             return redirect()->route('login')->withErrors(['Invalid Email and password']);
         }
