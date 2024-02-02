@@ -15,7 +15,7 @@ How to setup locally
 
 -  Clone the repository
 ```bash
-git clone https://github.com/sohag-pro/laravel-deployer.git
+git clone https://github.com/developeralamin/Simple-URL-Shortener
 ```
 
 - Install dependencies
@@ -51,3 +51,5 @@ php artisan serve
 ```
 
 - Visit http://localhost:8000 in your browser
+- Create account
+- Login with email and password
