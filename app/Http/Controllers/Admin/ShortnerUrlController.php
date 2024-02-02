@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ShortUrlRequest;
-use App\Models\ShortUrl;
 use App\Repository\ShortnerRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
